@@ -25,7 +25,22 @@
       <input type="text" id="email" />
       <br />
       <br />
-      <input type="file" />
+      <label for="ice-cream-choice">Spaceship:</label>
+      <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+      <datalist id="ice-cream-flavors">
+        <option value="Chocolate"></option>
+        <option value="Coconut"></option>
+        <option value="Mint"></option>
+        <option value="Strawberry"></option>
+        <option value="Vanilla"></option>
+      </datalist>
+      |
+      <label for="service">Type of Service</label>
+      <input type="search" id="service" />
+      <br />
+      <br />
+      <input type="submit" value="Send Message" />
     </section>
   </body>
 </html>
