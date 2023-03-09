@@ -27,7 +27,12 @@ h1 {
   color: white;
 }
 .btn {
+  border: 2px solid transparent;
   cursor: pointer;
+}
+.btn:hover {
+  border-bottom: 2px solid black;
+  transition: 1s;
 }
 
 .sectionTitle {
