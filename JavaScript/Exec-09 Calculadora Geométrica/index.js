@@ -1,81 +1,81 @@
 function areaTriangulo() {
-  base = prompt("Informe a base do triângulo:");
-  altura = prompt("Informe a altura:");
-  resultado = (base * altura) / 2;
-  alert("A area do triângulo é: " + resultado);
-  return resultado;
+  let base = prompt("Informe a base do triângulo:");
+  let altura = prompt("Informe a altura do triângulo:");
+  return (base * altura) / 2;
 }
 
-function AreaRetangulo() {
-  let base = prompt("Informe a base do retângulo:");
-  let altura = prompt("Informe a Altura do retângulo:");
-  let resultado = base * altura;
-  alert("Resultado é igual a : " + resultado);
-  return resultado;
+function areaRetangulo() {
+  let base = prompt("Informe a base do triângulo:");
+  let altura = prompt("Informe a altura do triângulo:");
+  return base * altura;
 }
 
-function AreaQuadrado() {
-  let lado = prompt("Informe o lado do quadrado: ");
-  let resultado = lado * lado;
-  alert("A area do Quadrado é igual a: " + resultado);
+function areaQuadrado() {
+  let lado = prompt("Informe o lado do quadrado:");
+  return lado * lado;
 }
 
-function AreaTrapezio() {
-  let baseMaior = Number(prompt("Informe a Base Maior do Trapézio"));
-  let baseMenor = Number(prompt("Informe a Base Menor do Trapézio"));
-  let altura = prompt("Informe a Altura do Trapézio");
-  let resultado = ((baseMaior + baseMenor) * altura) / 2;
-  alert(resultado);
+function areaTrapezio() {
+  let baseMaior = Number(prompt("Informe a base Maior do Trapézio"));
+  let baseMenor = Number(prompt("Informe a base Menor do Trapézio"));
+  let altura = prompt("Informe a altura do Trapézio");
+  return ((baseMaior + baseMenor) * altura) / 2;
 }
 
-function AreaCirculo() {
-  let raio = prompt("Informe o raio do circulo: ");
+function areaCirculo() {
+  let raio = prompt("Informe o raio do circulo:");
   let pi = 3.14;
-  let resultado = pi * (raio * raio);
-  alert(resultado);
+  return pi * raio * raio;
 }
 
 function exibirMenu() {
   return prompt(
-    "Qual das opções abaixo deseja calcular?\n" +
-      "\n1-Calcular a area do triângulo" +
-      "\n2-Calcular a area do triângulo" +
-      "\n3-Calcular a area do triângulo" +
-      "\n4-Calcular a area do triângulo" +
-      "\n5-Calcular a area do triângulo" +
-      "\n6-Sair"
+    "Escolha uma das opções Abaixo:\n" +
+      "\n1-Calcular a area do Triângulo " +
+      "\n2-Calcular a area do Retângulo " +
+      "\n3-Calcular a area do Quadrado " +
+      "\n4-Calcular a area do Trapézio " +
+      "\n5-Calcular a area do Círculo " +
+      "\n6-Sair "
   );
 }
 
-function executar() {
-  opcao = "";
+function executarOpção() {
+  let opcao = "";
+  let resultado;
+
   do {
     opcao = exibirMenu();
+
     switch (opcao) {
       case "1":
-        areaTriangulo();
+        resultado = areaTriangulo();
         break;
       case "2":
-        AreaRetangulo();
+        resultado = areaRetangulo();
         break;
       case "3":
-        AreaQuadrado();
+        resultado = areaQuadrado();
         break;
       case "4":
-        AreaTrapezio();
+        resultado = areaTrapezio();
         break;
       case "5":
-        AreaCirculo();
+        resultado = areaCirculo();
         break;
       case "6":
         alert("Saindo...");
         break;
 
       default:
-        alert("Opção Inválida!");
+        alert("Opção Inválida");
         break;
     }
-  } while (opcao != "6");
+
+    if (resultado) {
+      alert("Resultado é : " + resultado);
+    }
+  } while (opcao !== "6");
 }
 
 exibirMenu();
