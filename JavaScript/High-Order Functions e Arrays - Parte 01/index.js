@@ -47,3 +47,27 @@ const nivelTotal = personagens.reduce(function (valorAcumulado, personagem) {
 }, 0);
 
 console.log(nivelTotal);
+
+const racas = personagens.reduce(function (valorAcumulado, personagem) {
+  if (valorAcumulado[personagem.raca]) {
+    valorAcumulado[personagem.raca].push(personagem);
+  } else {
+    valorAcumulado[personagem.raca] = [personagem];
+  }
+
+  return valorAcumulado;
+}, {});
+
+console.log(racas);
+
+// Sort // Ordenar Arrays// Mudar os elementos de posição de acordo com algum critério
+// Modifica o Array!!
+//Slice é colocado para fazer uma cópia!! podendo assim armazenar em uma Variavel!
+const personagensOrdenados = personagens.slice().sort();
+
+personagens.sort(function (a, b) {
+  // return a.nivel - b.nivel;
+  return b.nivel - a.nivel;
+});
+
+console.log(personagens);
