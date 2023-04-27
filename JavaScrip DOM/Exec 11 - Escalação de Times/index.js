@@ -1,27 +1,35 @@
-function escalarJogador() {
-  const posicao = document.getElementById("posicao").value;
+function addplayer() {
   const name = document.getElementById("name").value;
-  const camisa = document.getElementById("camisa").value;
+  const numero = document.getElementById("numero").value;
+  const posicao = document.getElementById("posicao").value;
 
-  const confirmacao = confirm(
-    `Deseja realmente escalar o jogador ${name}
-Camisa ${camisa} 
-Na posição ${posicao}?`
+  const teamList = document.getElementById("teamList");
+  const newPlayer = document.createElement("li");
+  newPlayer.id += "player-" + numero;
+  newPlayer.innerText = posicao + ": " + name + " (" + numero + ")";
+
+  const confiramcao = confirm(
+    "Deseja escalar o jogador " +
+      name +
+      " na posição de " +
+      posicao +
+      " camisa: " +
+      numero
   );
-  if (confirmacao) {
-    const sectionTime = document.getElementById("time");
-    const ul = document.createElement("ul");
 
-    const li = document.createElement("li");
-    li.innerText = `Jogador ${name} camisa ${camisa} posição ${posicao}`;
-    li.id = `${camisa}`;
+  if (confiramcao) {
+    teamList.append(newPlayer);
 
-    ul.append(li);
-    sectionTime.append(ul);
+    document.getElementById("name").value = "";
+    document.getElementById("numero").value = "";
+    document.getElementById("posicao").value = "";
   }
 }
 
-function removerJogador() {
-  const sectionTime = document.getElementById("time");
-  const jogadorRemoved = document.getElementById("camisaRemove");
+function removedPlayer() {
+  const teamList = document.getElementById("teamList");
+  const numero = document.getElementById("playerToRemoved").value;
+
+  const playerRemoved = document.getElementById("player-" + numero);
+  teamList.remove(playerRemoved);
 }

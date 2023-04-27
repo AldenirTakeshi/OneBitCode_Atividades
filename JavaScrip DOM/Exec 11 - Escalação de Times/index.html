@@ -9,21 +9,25 @@
   <body>
     <h1>Escalação de Times</h1>
     <hr />
-    <label for="name">Nome:</label>
-    <input type="text" name="name" id="name" />
-    <label for="camisa">Camisa:</label>
-    <input type="number" camisa="camisa" id="camisa" />
-    <label for="posicao">Posição:</label>
-    <input type="text" posicao="posicao" id="posicao" />
-    <hr />
-    <button onclick="escalarJogador()">Escalar</button>
-    <hr />
-    <label for="camisaRemove">Camisa:</label>
-    <input type="text" id="camisaRemove" />
-    <button onclick="removerJogador()">Remover</button>
-    <hr />
+    <div class="escalacao">
+      <h2>Escalar Jogador</h2>
+      <label for="name">Nome:</label>
+      <input type="text" id="name" />
+      <label for="posicao">Posição:</label>
+      <input type="text" id="posicao" />
+      <label for="numero">Numero:</label>
+      <input type="text" id="numero" />
+      <button onclick="addplayer()">Escalar</button>
+    </div>
 
-    <section id="time"></section>
+    <div class="remove">
+      <h2>Remover Jogador</h2>
+      <label for="playerToRemoved">Numero:</label>
+      <input type="text" id="playerToRemoved" />
+      <button onclick="removedPlayer()">Remover</button>
+    </div>
+
+    <ul id="teamList"></ul>
     <script src="index.js"></script>
   </body>
 </html>
